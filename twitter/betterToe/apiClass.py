@@ -52,6 +52,15 @@ class API():
         nJSON = self.__api.user_timeline(screen_name = self.__un,count=1)
         for i in nJSON:
             return i._json['id']
+    def grabDM(self,n):
+        # use this function to grab n messages from you Direct Messages, returns a list of size n
+        return self.__api.list_direct_messages(n)
+    def sendDM(self,tid,text):
+        # use this function to send a DM to someone, provide it with the persons id and the text
+        self.__api.send_direct_message(tid, text) 
+    def refreshCursor(self,un,lastID):
+        # use this function to grab all responses to a person since a given id.
+        return tweepy.Cursor(self.__api.search, q=f'@{un}', since_id=lastID, tweet_mode='extended')
     def getName(self,):
         # Get the name of the API account.
         return self.__un

@@ -14,6 +14,7 @@ class player:
         # When someone replies we will store their name and id
         self.__name = name
         self.__nameid = nameid
+        self.__status = 'wait'
         
         # When someone creates a character we will start counting win/loss/number of games:
         self.__numGames = 0
