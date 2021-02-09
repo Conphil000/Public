@@ -26,6 +26,7 @@ class player:
             # If someone has a favor of 0 the computer will always play the best move,
             # if someon has a favor of .5 the computer will play the best move 50% of the time.
         self.changeFavor(0.4)
+        self.resetInactive()
     def getName(self):
         # If you want to identify the player you should call this function.
         return self.__name
@@ -41,6 +42,9 @@ class player:
     def getLosses(self,):
         # if you want to know how many games someone has lost call this function.
         return self.___numLoss
+    def getInactivity(self,):
+        # if you want to know how long a person has been inactive you can call this function.
+        return self.__inactive
     def getNumGames(self,):
         # If you want to know how many games someone has attempted call this fucntion.
         return self.__numGames
@@ -51,6 +55,12 @@ class player:
     def changeStatus(self,status):
         # If you want to change the current status of a player you should call this function with a new status as an input.
         self.__status = status
+    def resetInactive(self,):
+        # If you want to reset a players inactivity then call this function
+        self.__inactive = 0
+    def addInactive(self,):
+        # if you want to add to a players inactivitt then call this function
+        self.__inactive += 1
     def addGame(self,):
         # If you want to increase the game count by 1 call this function.
         self.__numGames += 1

@@ -32,7 +32,7 @@ class tweeter:
         self.__m = threading.Thread(target = self.__main,args=[])
         self.__m.start()
     def __setupAPI(self):
-        try: #Connect to API
+        try: #Connect to API#!!!
             self.__apik = self.__keys['APIK']
             self.__apisk = self.__keys['APISK']
             self.__bk = self.__keys['BK']
@@ -46,13 +46,13 @@ class tweeter:
             print('API Launching...')
         except:
             print('ERROR IN LAUNCHING API!')
-    def __grabLastID(self):
+    def __grabLastID(self): #!!!
         nJSON = self.__api.user_timeline(screen_name = self.__un,count=1)
         for i in nJSON:
             return i._json['id'] #This is the most recent response
     def __monitorDM(self):
         print('Monitor Launched...')
-        dms = self.__api.list_direct_messages(5)
+        dms = self.__api.list_direct_messages(5) #!!!
         alive = True
         while alive:
             dms = self.__api.list_direct_messages(1) # Pull one of the new DMs

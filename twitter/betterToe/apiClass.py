@@ -10,7 +10,7 @@ import json
 with open('keys.json','r') as fp:
     keys = json.load(fp)
     
-class API():
+class API:
     def __init__(self,apik,apisk,bt,at,ats):
         # You need to provide this object with the keys you got from twitter;
             # You need to ask twitter for permission to tweet from you api and get those extra keys:
@@ -26,6 +26,7 @@ class API():
         self.__bt = bt
         self.__at = at
         self.__ats = ats
+        
         try:
             self.__connectAPI()
         except:
@@ -69,13 +70,13 @@ class API():
         return self.__id
     
 
-test = API(keys['APIK'],keys['APISK'],keys['BK'],keys['AT'],keys['ATS'])
-
-test.publishTweet('test#1')
-print(test.getName(),test.getNameID())
-testid = test.grabLastTID()
-if 1 == 0:    
-    test.deleteTweet(testid)
+#test = API(keys['APIK'],keys['APISK'],keys['BK'],keys['AT'],keys['ATS'])
+#
+#test.publishTweet('test#1')
+#print(test.getName(),test.getNameID())
+#testid = test.grabLastTID()
+#if 1 == 0:    
+#    test.deleteTweet(testid)
                   
                   
                   
