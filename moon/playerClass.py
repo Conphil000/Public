@@ -6,8 +6,7 @@ Created on Mon Feb  8 19:17:23 2021
 """
 import random
 class player:
-    def __init__(self,un):   
-        self.__name = un
+    def __init__(self,):   
         self.__score = 0
         self.__win = 0 
         self.__deck = []
