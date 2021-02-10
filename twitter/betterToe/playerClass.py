@@ -70,3 +70,18 @@ class player:
     def addLoss(self,):
         # If you want to increase the loss count by 1 call this function.
         self.__numLoss += 1
+    def startGame(self,):
+        self.__moves = [1,2,3,4,5,6,7,8,9]
+    def resetBoard(self,):
+        self.__board = '1 |  2  | 3\n- + - + -\n4 |  5  | 6\n- + - + -\n7 |  8  | 9'
+    def updateBoard(self,player,replace):
+        self.__board = self.__board.replace(str(replace),player)
+    def removeMove(self,move):
+        self.__moves.remove(int(move))
+        
+        
+        
+        
+        
+        
+        
